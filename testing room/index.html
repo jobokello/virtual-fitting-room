@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		body {
+		  background-image: url("http://www.pngpix.com/download/9229");
+		  background-repeat: no-repeat;
+		  background-position: center;
+		  background-attachment: fixed;
+		  background-size: 30%;
+		}
+	</style>
+	<title>tryon Room</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="tryon.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#wrapper').draggable();
+  			$('#image').resizable(
+  				{
+  					handles: 'ne, se, sw, nw'
+				}
+			);
+		});
+	</script>
+<body>
+
+	<div id="wrapper" style="display:inline-block">
+  		<img id="image" src="http://www.pngmart.com/files/4/Floral-Dress-PNG-Picture.png" />
+	</div>
+
+</body>
+</html>
