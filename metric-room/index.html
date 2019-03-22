@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Metric Room</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="click.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <h1>Taking body measurements</h1>
+  <p>Refer to the object on the right and click on the image</p>
+  <div class="row">
+    <div class="col-md-8" style="background-color:lavender; height: 500px;">
+      <div>
+          <img id="myClient" src="../camera and fit/upload/Image_1.png" alt="" />
+        </div>
+        <div style="padding-top:20px;">
+            <div id="coord"></div>
+        </div>
+    </div>
+    <div class="col-md-4" style="background-color:lavenderblush;">
+       <img id="mySilo" height="500px" src="../camera and fit/upload/Silo1.jpg">
+    </div>
+    <div  class="col-md-6" style="background-color:lavenderblush; display: none;">
+       <h1>hi2</h1>
+        
+    </div>
+  </div>
+</div>
+
+<button onclick="document.getElementById('myClient').src='../camera and fit/upload/Image_2.png'">Turn off the light</button>
+
+<button onclick= "changeImage()" >Stretch Arms</button>
+
+<script type="text/javascript">
+  function changeImage(){
+    document.getElementById("myClient").src="../camera and fit/upload/Image_3.png";
+    }
+</script>
+    
+</body>
+</html>
