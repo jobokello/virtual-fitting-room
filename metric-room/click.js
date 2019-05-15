@@ -78,7 +78,7 @@ $(document).ready(function() {
       {
         getPoints.A1 = X;
         getPoints.A2 = Y;
-        //alert("A1 is " + getPoints.A1 + "  A2 is " + getPoints.A2);
+        alert("A1 is " + getPoints.A1 + "  A2 is " + getPoints.A2);
         document.getElementById("mySilo").src="../camera and fit/upload/Silo2.jpg";
       }
     }
