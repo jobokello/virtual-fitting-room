@@ -184,8 +184,8 @@ $(document).ready(function() {
         alert("all measurements taken");
       }
 
-      alert(getPoints.A1);
-      alert(getPoints.A2);
+      alert("Point A1 is " + getPoints.A1);
+      alert("Point A2 is " + getPoints.A2);
     }
     
 
