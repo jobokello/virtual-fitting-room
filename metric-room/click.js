@@ -78,7 +78,7 @@ $(document).ready(function() {
       {
         getPoints.A1 = X;
         getPoints.A2 = Y;
-        alert("A1 is " + getPoints.A1 + "  A2 is " + getPoints.A2);
+        //alert("A1 is " + getPoints.A1 + "  A2 is " + getPoints.A2);
         document.getElementById("mySilo").src="../camera and fit/upload/Silo2.jpg";
       }
     }
@@ -182,8 +182,10 @@ $(document).ready(function() {
         getPoints.ref22 = Y;
         //alert("ref1 is " + getPoints.ref1 + "  ref2 is " + getPoints.ref2);
         alert("all measurements taken");
-        //calcCrow(getPoints.A1,getPoints.A2,getPoints.B1,getPoints.B2,getPoints.C1,getPoints.C2,getPoints.D1,getPoints.D2,getPoints.E1,getPoints.E2,getPoints.F1,getPoints.F2,getPoints.G1,getPoints.G2,getPoints.H1,getPoints.H2,getPoints.ref11,getPoints.ref12,getPoints.ref21,getPoints.ref22);
       }
+
+      alert(getPoints.A1);
+      alert(getPoints.A2);
     }
     
 
