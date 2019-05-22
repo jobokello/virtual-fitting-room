@@ -164,6 +164,7 @@ $(document).ready(function() {
         getPoints.H1 = X;
         getPoints.H2 = Y;
         //alert("H1 is " + getPoints.H1 + "  H2 is " + getPoints.H2);
+        document.getElementById("myClient").src="../camera and fit/upload/Image_4.png";
         alert("Click on two points of the square");
       }
     }
@@ -282,4 +283,27 @@ function calculate(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,H1,H2,ref11,ref12,r
     var refObjectLength = calcCrow(refObject1,refObject2,refObject3,refObject4);
 
     alert("reference object lenghth is " + refObjectLength);
+
+    finalInches(shoulderLenghth,armLenghth,shoulderToWaist,waistCircumference,refObjectLength);
+}
+
+function finalInches(shoulderLenghth,armLenghth,shoulderToWaist,waistCircumference,refObjectLength){
+
+  var finalRefObjectLength = refObjectLength;
+
+  var finalShoulderLength  = (shoulderLenghth*3.4)/finalRefObjectLength;
+
+  var finalArmLength  = (armLenghth*3.4)/finalRefObjectLength;
+
+  var finalShoulderToWaist  = (shoulderToWaist*3.4)/finalRefObjectLength;
+
+  var finalWaistCircumference  = (waistCircumference*3.4)/finalRefObjectLength;
+
+  document.getElementById("shoulderLength").innerHTML = finalShoulderLength + " inches";
+
+  document.getElementById("armLength").innerHTML = finalArmLength + " inches";
+
+  document.getElementById("torsoHeight").innerHTML = finalShoulderToWaist + " inches";
+
+  document.getElementById("waistLine").innerHTML = finalWaistCircumference + " inches";
 }
