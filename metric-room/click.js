@@ -1,3 +1,5 @@
+
+
 $(document).ready(function() {
     $('img').click(function(e) {
         var offset = $(this).offset();
@@ -29,7 +31,10 @@ $(document).ready(function() {
         Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
       var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
       var d = R * c;
-      return d;
+
+      var estimate = Math.round(d);
+
+      return estimate;
     }
 
     // Converts numeric degrees to radians
@@ -40,15 +45,15 @@ $(document).ready(function() {
 
 
    function ramanujan(m,n){
-   	 var circ = (3 * (m + n)) + (math.sqrt((3*m + n)*(m + 3*n)));
+   	 var circ = (3 * (m + n)) + (Math.sqrt((3*m + n)*(m + 3*n)));
+     return circ;
    }
 
   
 
    function getPoints(X,Y) {
 
-   	/*
-    var A1;
+   	var A1;
    	var A2;
    	var B1;
    	var B2;
@@ -65,7 +70,7 @@ $(document).ready(function() {
    	var H1;
    	var H2;
    	var ref1;
-   	var ref2;*/
+   	var ref2;
 
     if( typeof getPoints.counter == 'undefined' ) {
         getPoints.counter = 0;
@@ -184,8 +189,29 @@ $(document).ready(function() {
         alert("all measurements taken");
       }
 
-      alert("Point A1 is " + getPoints.A1);
-      alert("Point A2 is " + getPoints.A2);
+      A1 = getPoints.A1;
+      A2 = getPoints.A2;
+      B1 = getPoints.B1;
+      B2 = getPoints.B2;
+      C1 = getPoints.C1;
+      C2 = getPoints.C2;
+      D1 = getPoints.D1;
+      D2 = getPoints.D2;
+      E1 = getPoints.E1;
+      E2 = getPoints.E2;
+      F1 = getPoints.F1;
+      F2 = getPoints.F2;
+      G1 = getPoints.G1;
+      G2 = getPoints.G2;
+      H1 = getPoints.H1;
+      H2 = getPoints.H2;
+      ref11 = getPoints.ref11;
+      ref12 = getPoints.ref12;
+      ref21 = getPoints.ref21;
+      ref22 = getPoints.ref22;
+
+      //salert("A1 is " + A1 + "and A2 is "+ A2);
+      calculate(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,H1,H2,ref11,ref12,ref21,ref22);
     }
     
 
@@ -197,25 +223,63 @@ $(document).ready(function() {
  
 }
 
-/*function calculate(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,H1,H2,ref1,ref2){
-    var Am1 = A1;
-    var Am2 = A2;
+function calculate(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,H1,H2,ref11,ref12,ref21,ref22){
+    var sh1 = A1;
+    var sh2 = A2;
+    var sh3 = B1;
+    var sh4 = B2;
 
-    alert("A1 is " + A1 "and A2 is "+ A2);
-    var Bm1;
-    var Bm2;
-    var Cm1;
-    var Cm2;
-    var Dm1;
-    var Dm2;
-    var Em1;
-    var Em2;
-    var Fm1;
-    var Fm2;
-    var Gm1;
-    var Gm2;
-    var Hm1;
-    var Hm2;
-    var refm1;
-    var refm2;
-}*/
+    var shoulderLenghth = calcCrow(sh1,sh2,sh3,sh4);
+
+    alert("shoulder length is " + shoulderLenghth);
+
+    var am1 = C1;
+    var am2 = C2;
+    var am3 = D1;
+    var am4 = D2;
+
+    var armLenghth = calcCrow(am1,am2,am3,am4);
+
+    alert("arm length is " + armLenghth);
+
+    var sw1 = A1;
+    var sw2 = A2;
+    var sw3 = E1;
+    var sw4 = E2;
+
+    var shoulderToWaist = calcCrow(sw1,sw2,sw3,sw4);
+
+    alert("shoulder to waist length is " + shoulderToWaist);
+
+    var wf1 = E1;
+    var wf2 = E2;
+    var wf3 = F1;
+    var wf4 = F2;
+
+    var waistFacingForward = calcCrow(wf1,wf2,wf3,wf4);
+
+    alert("waist facing forward is " + waistFacingForward);
+
+    var ws1 = G1;
+    var ws2 = G2;
+    var ws3 = H1;
+    var ws4 = H2;
+
+    var waistFacingSideways = calcCrow(ws1,ws2,ws3,ws4);
+
+    alert("waist facing sideways is " + waistFacingSideways);
+
+    waistCircumference = ramanujan(waistFacingForward,waistFacingSideways);
+
+    alert("waist Circumference is " + waistCircumference);
+  
+ 
+    var refObject1 = ref11;
+    var refObject2 = ref12;
+    var refObject3 = ref21;
+    var refObject4 = ref22;
+
+    var refObjectLength = calcCrow(refObject1,refObject2,refObject3,refObject4);
+
+    alert("reference object lenghth is " + refObjectLength);
+}
