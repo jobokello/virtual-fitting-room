@@ -44,9 +44,13 @@ $(document).ready(function() {
     }
 
 
-   function ramanujan(m,n){
-   	 var circ = (3 * (m + n)) + (Math.sqrt((3*m + n)*(m + 3*n)));
-     return circ;
+   function ramanujan(a,b){
+
+    var m = a/2.5;
+    var n = b/2.5;
+
+   	var circ = ((3 * (m + n)) + (Math.sqrt((3*m + n)*(m + 3*n))));
+    return circ;
    }
 
   
@@ -232,25 +236,25 @@ function calculate(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,H1,H2,ref11,ref12,r
 
     var shoulderLenghth = calcCrow(sh1,sh2,sh3,sh4);
 
-    alert("shoulder length is " + shoulderLenghth);
+    //alert("shoulder length is " + shoulderLenghth);
 
-    var am1 = C1;
-    var am2 = C2;
-    var am3 = D1;
-    var am4 = D2;
+    var am1 = A1;
+    var am2 = A2;
+    var am3 = C1;
+    var am4 = C2;
 
     var armLenghth = calcCrow(am1,am2,am3,am4);
 
-    alert("arm length is " + armLenghth);
+    //alert("arm length is " + armLenghth);
 
-    var sw1 = A1;
-    var sw2 = A2;
-    var sw3 = E1;
-    var sw4 = E2;
+    var sw1 = B1;
+    var sw2 = B2;
+    var sw3 = F1;
+    var sw4 = F2;
 
     var shoulderToWaist = calcCrow(sw1,sw2,sw3,sw4);
 
-    alert("shoulder to waist length is " + shoulderToWaist);
+    //alert("shoulder to waist length is " + shoulderToWaist);
 
     var wf1 = E1;
     var wf2 = E2;
@@ -259,7 +263,7 @@ function calculate(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,H1,H2,ref11,ref12,r
 
     var waistFacingForward = calcCrow(wf1,wf2,wf3,wf4);
 
-    alert("waist facing forward is " + waistFacingForward);
+    //alert("waist facing forward is " + waistFacingForward);
 
     var ws1 = G1;
     var ws2 = G2;
@@ -268,11 +272,11 @@ function calculate(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,H1,H2,ref11,ref12,r
 
     var waistFacingSideways = calcCrow(ws1,ws2,ws3,ws4);
 
-    alert("waist facing sideways is " + waistFacingSideways);
+    //alert("waist facing sideways is " + waistFacingSideways);
 
     waistCircumference = ramanujan(waistFacingForward,waistFacingSideways);
 
-    alert("waist Circumference is " + waistCircumference);
+    //alert("waist Circumference is " + waistCircumference);
   
  
     var refObject1 = ref11;
@@ -282,7 +286,7 @@ function calculate(A1,A2,B1,B2,C1,C2,D1,D2,E1,E2,F1,F2,G1,G2,H1,H2,ref11,ref12,r
 
     var refObjectLength = calcCrow(refObject1,refObject2,refObject3,refObject4);
 
-    alert("reference object lenghth is " + refObjectLength);
+    //alert("reference object lenghth is " + refObjectLength);
 
     finalInches(shoulderLenghth,armLenghth,shoulderToWaist,waistCircumference,refObjectLength);
 }
@@ -291,19 +295,19 @@ function finalInches(shoulderLenghth,armLenghth,shoulderToWaist,waistCircumferen
 
   var finalRefObjectLength = refObjectLength;
 
-  var finalShoulderLength  = (shoulderLenghth*3.4)/finalRefObjectLength;
+  var finalShoulderLength  = (shoulderLenghth*11.7)/finalRefObjectLength;
 
-  var finalArmLength  = (armLenghth*3.4)/finalRefObjectLength;
+  var finalArmLength  = (armLenghth*11.7)/finalRefObjectLength;
 
-  var finalShoulderToWaist  = (shoulderToWaist*3.4)/finalRefObjectLength;
+  var finalShoulderToWaist  = (shoulderToWaist*11.7)/finalRefObjectLength;
 
-  var finalWaistCircumference  = (waistCircumference*3.4)/finalRefObjectLength;
+  var finalWaistCircumference  = (waistCircumference*11.7)/finalRefObjectLength;
 
-  document.getElementById("shoulderLength").innerHTML = finalShoulderLength + " inches";
+  document.getElementById("shoulderLength").innerHTML = Math.round(finalShoulderLength) + " inches";
 
-  document.getElementById("armLength").innerHTML = finalArmLength + " inches";
+  document.getElementById("armLength").innerHTML = Math.round(finalArmLength) + " inches";
 
-  document.getElementById("torsoHeight").innerHTML = finalShoulderToWaist + " inches";
+  document.getElementById("torsoHeight").innerHTML = Math.round(finalShoulderToWaist) + " inches";
 
-  document.getElementById("waistLine").innerHTML = finalWaistCircumference + " inches";
+  document.getElementById("waistLine").innerHTML = Math.round(finalWaistCircumference) + " inches";
 }
