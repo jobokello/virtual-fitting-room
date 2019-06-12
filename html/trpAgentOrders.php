@@ -1,13 +1,13 @@
 <?php
   session_start();
 
-  echo $trpID = $_SESSION['trpAgentID'];
+  $trpID = $_SESSION['trpAgentID'];
   $login_user = $_SESSION['trpAgentUsername'];
 
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "ivyproject";
+  $dbname = "virtualdressroom";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -111,7 +111,7 @@
 
             <!--links for navbar on the right-->
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="shoppingCart.php"><span class="gi-2x glyphicon glyphicon-list-alt"></span></a></li>
+              <li><a href="trpAgentOrders.php"><span class="gi-2x glyphicon glyphicon-list-alt"></span></a></li>
               <li><?php if($items>0){ echo "<h4> $items <h4>";}?></li>  
 
               <li><a title = "click to views your profile" href="#"><span class="glyphicon glyphicon-user"></span><span class="userloggedin"><strong> <?php echo $login_user;?></strong></span><span ></span></a></li>
@@ -121,6 +121,8 @@
         </div>
       </nav>
 
+      <br>
+      <br>
       <br>
       <br>
 

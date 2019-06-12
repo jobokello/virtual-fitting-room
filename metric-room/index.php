@@ -1,3 +1,45 @@
+<?php
+  session_start();
+  $shopper = $_SESSION['shopperID'];
+  $login_user = $_SESSION['shopperUsername'];
+  $testCloth = $_SESSION['clothID'];
+  echo $currentOrder = $_SESSION['payID'];
+
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "virtualdressroom";
+
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  //items in shopping cart
+  $items = '';
+
+  $sql = "SELECT * FROM clothesinfo WHERE clothID='$testCloth'";
+
+  if ($result = mysqli_query($conn, $sql)){
+
+    /* determine number of rows result set */
+    $row_cnt = mysqli_num_rows($result);
+
+    $items = $row_cnt;
+
+    $row = mysqli_fetch_array($result);
+      //echo $accountID = $row['orderID'];
+    if(isset($row['image']))
+    {
+      $myPurchase = $row['image'];
+    }
+    
+    //printf("Result set has %d rows.\n", $row_cnt);
+
+    /* close result set */
+    mysqli_free_result($result);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,20 +104,20 @@
             </tr>
           </tbody>
         </table>
-        
+
+        <div style="text-align: center;s">
+          <button type="button" href="" class="btn btn-success" onclick=" relocate()">Confirm Measurements And Make Purchase</button>
+        </div>
     </div>
   </div>
 </div>
 
-<!--<button onclick="document.getElementById('myClient').src='../camera and fit/upload/Image_2.png'">Turn off the light</button>
-
-<button onclick= "changeImage()" >Change Image</button>
-
-<script type="text/javascript">
-  function changeImage(){
-    document.getElementById("myClient").src="../camera and fit/upload/Image_3.png";
-    }
-</script>-->
+<script>
+  function relocate()
+  {
+    location.href = "../php/insertMetrics.php";
+  } 
+</script>
     
 </body>
 </html>

@@ -9,10 +9,10 @@
     <title>designer Signup </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap3/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/home.css" rel="stylesheet" type="text/css">
+    <link href="../css/home.css" rel="stylesheet" type="text/css">
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -49,10 +49,10 @@
 
   <form action="../php/designerReg.php" method="POST">
     <fieldset>
-      <legend style="text-align: center;">Designer registration page</legend>
+      <legend style="text-align: center; text-transform: capitalize;">Designer registration</legend>
       <div class="form-group col-sm-4 col-md-4">
-      <label for="sname">sirname:</label>
-      <input type="text" class="form-control" id="sName" name="sName">
+      <label for="sname">First Name:</label>
+      <input type="text" class="form-control" id="fName" name="fName">
     </div>
 
     <div class="form-group col-sm-4 col-md-4">
@@ -397,7 +397,7 @@
      <div class="form-group col-sm-4 col-md-4">
       <label for="password2">Confirm Password:</label>
       <input type="password" class="form-control" id="password2" name="password2" onkeyup='check()';>
-      <h4><span id='message'></span></h4>
+      <h4><span id='message2'></span></h4>
     </div>
 
     <div class="clearfix"></div>
@@ -416,10 +416,14 @@
   if (document.getElementById('password').value ==
     document.getElementById('password2').value) {
     document.getElementById('message').style.color = 'green';
-    document.getElementById('message').innerHTML = 'matching';
+    document.getElementById('message').innerHTML = 'Matching';
+    document.getElementById('message2').style.color = 'green';
+    document.getElementById('message2').innerHTML = 'Matching';
   } else {
     document.getElementById('message').style.color = 'red';
     document.getElementById('message').innerHTML = 'not matching';
+    document.getElementById('message2').style.color = 'red';
+    document.getElementById('message2').innerHTML = 'not matching';
   }
 }
 </script>

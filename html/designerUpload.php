@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	echo 'time to upload goods';
 
 	$designerID = $_SESSION['designerID'];
   $login_user = $_SESSION['designerUsername'];

@@ -12,7 +12,7 @@
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "ivyproject";
+  $dbname = "virtualdressroom";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,7 +20,7 @@
   //items in shopping cart
   $items = '';
 
-  $sql = "SELECT * FROM orders WHERE shopperID='$shopper' AND paymentStatus='unpaid'";
+  $sql = "SELECT * FROM orders WHERE shopperID='$shopper' AND paymentStatus='Pending'";
 
   if ($result = mysqli_query($conn, $sql)){
 
@@ -104,7 +104,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li><a href="shoppingCart.php"><img src="../images/cart3.png">  <?php if($items>0){ echo "<span class='badge'> $items </span>";}?></a></li>
 
-              <li><a title = "click to views your profile" href="#"><span class="glyphicon glyphicon-user"></span><span class="userloggedin"><strong> <?php echo $login_user;?></strong></span><span ></span></a></li>
+              <li><a style="text-transform: capitalize;" title = "click to views your profile" href="#"><span class="glyphicon glyphicon-user"></span> <span> </span> <span class="userloggedin"><strong> <?php echo $login_user;?></strong></span><span ></span></a></li>
               <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout<span></span></a></li>
             </ul>
           </div>
@@ -118,7 +118,7 @@
 
 
       <?php
-			$db = mysqli_connect("localhost", "root", "", "ivyproject");
+			$db = mysqli_connect("localhost", "root", "", "virtualdressroom");
 			$sql = "SELECT clothID, clothName,clothDescription,clothPrice,image FROM clothesinfo";
 			$result = mysqli_query($db, $sql);
 

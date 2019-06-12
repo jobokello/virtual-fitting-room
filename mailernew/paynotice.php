@@ -12,7 +12,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "ivyproject";
+$dbname = "virtualdressroom";
 echo $ID = $_SESSION['payID'];
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -86,7 +86,7 @@ $mail = new PHPMailer(true);                              // Passing `true` enab
 try 
 {
     //Server settings
-    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+    $mail->SMTPDebug = 5;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -97,7 +97,7 @@ try
 
     //Recipients
     $mail->setFrom('ivydesigns20@gmail.com', 'Ivy Designs');
-    $mail->addAddress($desEmail);     // Add a recipient
+    $mail->addAddress('jobokello5@gmail.com');     // Add a recipient
     //$mail->addAddress('ellen@example.com');               // Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
@@ -137,7 +137,7 @@ try
 
             //Recipients
             $mail->setFrom('ivydesigns20@gmail.com', 'Ivy Designs');
-            $mail->addAddress($shopEmail);     // Add a recipient
+            $mail->addAddress('jacknovak009@gmail.com');     // Add a recipient
             //$mail->addAddress('ellen@example.com');               // Name is optional
             //$mail->addReplyTo('info@example.com', 'Information');
             //$mail->addCC('cc@example.com');

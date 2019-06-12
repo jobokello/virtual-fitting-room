@@ -1,3 +1,49 @@
+<?php
+    session_start();
+    $shopper = $_SESSION['shopperID'];
+    $login_user = $_SESSION['shopperUsername'];
+  echo $ID = $_GET['id'];
+  echo $_SESSION['payID'] = $ID;
+
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "virtualdressroom";
+
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  //items in shopping cart
+  $items = '';
+
+  $sql = "SELECT * FROM orders WHERE orderID='$ID'";
+
+  if ($result = mysqli_query($conn, $sql)){
+
+    /* determine number of rows result set */
+    $row_cnt = mysqli_num_rows($result);
+
+    $items = $row_cnt;
+
+    $row = mysqli_fetch_array($result);
+      //echo $accountID = $row['orderID'];
+    if(isset($row['clothID']))
+    {
+      $_SESSION['clothID'] = $row['clothID'];
+    }
+
+    
+
+
+    
+    //printf("Result set has %d rows.\n", $row_cnt);
+
+    /* close result set */
+    mysqli_free_result($result);
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

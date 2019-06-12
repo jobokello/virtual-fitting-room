@@ -21,7 +21,7 @@
 
   <style type="text/css">
     #map{ 
-      width: 70%; 
+      width: 1240px; 
       height: 380px;
       border: 1px solid green;
     }
@@ -78,7 +78,7 @@
   <form action="../php/shopperReg.php" method="POST">
     <fieldset>
 
-      <legend style="text-align: center;">Shopper registration page</legend>
+    <legend style="text-align: center;  text-transform: capitalize;">Shopper registration</legend>
 
     <div class="form-group col-sm-4 col-md-4">
       <label for="fName">First Name:</label>
@@ -433,17 +433,36 @@
 
     <div class="clearfix"></div>
 
+    <p>
+        <strong>Please pinpoint your location on the map for easy navigation to your premises</strong>
+    </p>
+    <div id="map"></div>
+    <br>
+    <br>
+    <div class="form-group col-xs-6">
+         <label for="lat">latitude:</label>
+         <input type="text" id="lat" readonly="yes" name="latitude" class="form-control"><br><br>
+    </div>
+    <div class="form-group col-xs-6">
+        <label for="lng">Longitude:</label>
+        <input type="text" id="lng" readonly="yes" name="longitude" class="form-control">
+    </div>
+    <br>
+    <br>
+
     <div class="text-center">
       <button type="submit" class="btn btn-primary btn-block">Submit</button>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
 
-    </fieldset>
-
-    
+    </fieldset>    
 </form>
 <script type="text/javascript" src="../javascript/map.js"></script>
 </div>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiBRKFRQvYcetiPIotdfje3IVhQRIHcOc" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJIFzeX2wWB5QG7RuFVNU7FiuZGy0e3X8" type="text/javascript"></script>
 <script type="text/javascript" src="map.js"></script>
 
 <script type="text/javascript">

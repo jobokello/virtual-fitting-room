@@ -303,6 +303,7 @@ function finalInches(shoulderLenghth,armLenghth,shoulderToWaist,waistCircumferen
 
   var finalWaistCircumference  = (waistCircumference*11.7)/finalRefObjectLength;
 
+
   document.getElementById("shoulderLength").innerHTML = Math.round(finalShoulderLength) + " inches";
 
   document.getElementById("armLength").innerHTML = Math.round(finalArmLength) + " inches";
@@ -310,4 +311,42 @@ function finalInches(shoulderLenghth,armLenghth,shoulderToWaist,waistCircumferen
   document.getElementById("torsoHeight").innerHTML = Math.round(finalShoulderToWaist) + " inches";
 
   document.getElementById("waistLine").innerHTML = Math.round(finalWaistCircumference) + " inches";
+
+  var shoulder = Math.round(finalShoulderLength);
+
+  var arm = Math.round(finalArmLength);
+
+  var torso = Math.round(finalShoulderToWaist);
+
+  var waist = Math.round(finalWaistCircumference);
+
+  confirm("press OK if the measurements obtained look accurate?");
+  
+  metricPost(shoulder, arm, torso, waist);
+
+  
+
 }
+
+function final(){
+  
+
+}
+
+
+function metricPost(shoulder, arm, torso, waist){
+
+  var shoulder = shoulder;
+  var arm = arm;
+  var torso = torso;
+  var waist = waist;
+
+  //var hello = "hello my friend";
+ //var world = "welcome to my world";
+
+  //$.post('../php/insertMetrics.php',{postmyShoulder:myShoulder, postmyArm:myArm, postmyTorso:myTorso, postmyWaist:myWaist});
+
+  window.location.href = "../php/insertMetrics.php?m1=" + shoulder + "&m2=" + arm + "&m3=" + torso + "&m4=" + waist;
+}
+
+

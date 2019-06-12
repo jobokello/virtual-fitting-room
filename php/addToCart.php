@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	echo 'time to shop';
 	echo $_SESSION['shopperID'];
 	$login_user = $_SESSION['shopperUsername']; 
 	echo $login_user;
@@ -10,7 +9,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "ivyproject";
+	$dbname = "virtualdressroom";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);

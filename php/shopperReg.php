@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "ivyproject";
+$dbname = "virtualdressroom";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -54,10 +54,20 @@ if (isset($_POST['constituency']))
 if (isset($_POST['password'])) 
 { 
 	$shopperPassword = md5($_POST["password"]);
+}
+
+if (isset($_POST['latitude'])) 
+{ 
+	$latitude = $_POST["latitude"];
 } 
 
-$sql = "INSERT INTO shopperinfo (shopperfName, shoppersName,shopperusername, shopperemail, shopperPhonenumber, shopperCounty, shopperConstituency, shopperPassword)
-VALUES ('$shopperfName', '$shoppersName', '$shopperusername', '$shopperemail', '$shopperPhonenumber', '$shopperCounty', '$shopperConstituency','$shopperPassword')";
+if (isset($_POST['longitude'])) 
+{ 
+	$longitude = $_POST["longitude"];
+}  
+
+$sql = "INSERT INTO shopperinfo (shopperfName, shoppersName,shopperusername, shopperemail, shopperPhonenumber, shopperCounty, shopperConstituency, longitude, latitude, shopperPassword)
+VALUES ('$shopperfName', '$shoppersName', '$shopperusername', '$shopperemail', '$shopperPhonenumber', '$shopperCounty', '$shopperConstituency','$longitude',$latitude,'$shopperPassword')";
 
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";

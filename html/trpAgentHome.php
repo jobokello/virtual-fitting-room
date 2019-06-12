@@ -1,14 +1,13 @@
 <?php
   session_start();
-  echo 'time to upload goods';
 
-  echo $trpID = $_SESSION['trpAgentID'];
+  $trpID = $_SESSION['trpAgentID'];
   $login_user = $_SESSION['trpAgentUsername'];
 
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "ivyproject";
+    $dbname = "virtualdressroom";
 
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
@@ -71,7 +70,7 @@
     <title>Agent Page</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="bootstrap3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap3/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../css/style.css" rel="stylesheet" type="text/css">
@@ -138,7 +137,7 @@
               </div>
               <div class="col-md-4">
                 <div class="well dash-box">
-                  <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>  203</h2>
+                  <h2><span class="glyphicon glyphicon-stats" aria-hidden="true"></span> <?php echo 15;?></h2>
                   <h4>Stock</h4>
                 </div>
               </div>

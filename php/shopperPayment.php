@@ -2,8 +2,7 @@
 	session_start();
 	$shopper = $_SESSION['shopperID'];
 	$login_user = $_SESSION['shopperUsername'];
-  $ID = $_GET['id'];
-  $_SESSION['payID'] = $ID;
+  echo $ID = $_SESSION['payID'];
 
   $servername = "localhost";
   $username = "root";
@@ -29,8 +28,12 @@
       //echo $accountID = $row['orderID'];
     if(isset($row['orderPrice']))
     {
-      $cost = $row['orderPrice'];
+     //$cost = $row['orderPrice'];
+
+      
     }
+
+    $cost = 300;
 
     
 

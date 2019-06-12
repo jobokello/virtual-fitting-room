@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	echo 'time to upload goods';
 
 	$desID = $_SESSION['designerID'];
   	$login_user = $_SESSION['designerUsername'];
@@ -9,7 +8,7 @@
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
-	$dbname = "ivyproject";
+	$dbname = "virtualdressroom";
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);

@@ -6,7 +6,7 @@
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "ivyproject";
+  $dbname = "virtualdressroom";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -19,7 +19,7 @@
   if ($result = mysqli_query($conn, $sql)){
 
     /* determine number of rows result set */
-    echo $row_cnt = mysqli_num_rows($result);
+    $row_cnt = mysqli_num_rows($result);
 
     $items = $row_cnt;
 
@@ -157,7 +157,7 @@
           echo "<td>".$row['designerStatus']."</td>";
           echo "<td>".$row['trpAgentStatus']."</td>";
           echo "<td>".$row['shopperStatus']."</td>";        
-          echo "<td><button style='margin:5px' type='button' class='btn btn-primary btn-block center-block'><a style='text-decoration: none; color: white;' href=\"../php/shopperPayment.php?id=$row[orderID]\">Pay for Order</a></button><button style='margin:5px' type='button' class='btn btn-success center-block'><a style='text-decoration: none; color: white;' href=\"../php/shopperConfirmation.php?id=$row[orderID]\">Order is Delivered</a></button> 
+          echo "<td><button style='margin:5px' type='button' class='btn btn-primary btn-block center-block'><a style='text-decoration: none; color: white;' href=\"../camera and fit/index.php?id=$row[orderID]\">Pay for Order</a></button><button style='margin:5px' type='button' class='btn btn-success center-block'><a style='text-decoration: none; color: white;' href=\"../php/shopperConfirmation.php?id=$row[orderID]\">Order is Delivered</a></button> 
           <button style='margin:5px' type='button' class='btn btn-danger btn-block center-blocks'><a style='text-decoration: none; color: white;' href=\"../php/shopperCancellation.php?id=$row[orderID]\" onClick=\"return confirm('Are you sure you want to cancel the and get a refund?')\">Cancel Order</a></button></td>";
           echo "</tr>";   
         }

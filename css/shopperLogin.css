@@ -10,6 +10,7 @@ body {
 	margin: 0 auto;
 	margin-top: 130px;
 	padding: 0;
+	right: 200px;
 }
 
 .modal-content{
@@ -17,6 +18,7 @@ body {
 	opacity: 0.8;
 	padding: 0 18px;
 	border-radius: 20px;
+	width: 700px;
 
 }
 
