@@ -39,6 +39,10 @@ else
         echo $cPrice = $row['orderPrice'];
         echo $shopID = $row['shopperID']; 
         echo $desID = $row['designerID'];
+        echo $myShoulder = $row['shoulder'];
+        echo $myArm = $row['arm'];
+        echo $myTorso = $row['torso'];
+        echo $myWaist = $row['waist'];
 
         $sql2 = "SELECT designerFname, designerSname, designerEmail FROM designerinfo WHERE designerID = '$desID'";
 
@@ -71,7 +75,21 @@ else
             echo $shopPhone = $rowShop['shopperPhonenumber'];
         }
 
-        $mailtodesigner = "<br>Dear $desFname $desSname, this is to notify you of your new cloth order from $shopFname $shopSname for the cloth under your collection called $cName for the price $cPrice. Kinldly complete this order. You may also contact $shopFname using the phone number $shopPhone for any customizations on the cloth.<br>Regards<br>
+        $sql4 = "SELECT image FROM clothesinfo WHERE clothID = '$cID'";
+
+        $result4 = mysqli_query($conn, $sql4);
+
+        if(mysqli_query($conn, $sql4))
+        {
+            echo 'got cloth';
+
+            $rowcloth = mysqli_fetch_array($result2);
+
+            echo $attachmentImage = $rowcloth['image'];
+        }
+
+        $mailtodesigner = "<br>Dear $desFname $desSname, this is to notify you of your new cloth order from $shopFname $shopSname for the cloth under your collection called $cName for the price $cPrice. Kinldly complete this order. You may also contact $shopFname using the phone number $shopPhone for any customizations on the cloth<br>This are the measurements<br>
+        <br>Shoulder Length = $myShoulder<br>Arm Length = $myArm<br> Torso Length = $myTorso<br>Waist Length = $myWaist.<br>Regards<br>
         Jobson Designs.";
         $mailtoshopper ="<br>Dear $shopFname,<br>This is to confirm that your cloth order has been received and is being processes by $desFname $desSname. The payment of ksh.$cPrice has also been Successfully received and will there only be forwarded to the paid out to the rightful individual upon the Successfull completion of your order.<br><br>Regards<br>Jobson Designs.";  
          
@@ -105,7 +123,7 @@ try
 
     //Attachments
     //$mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
-    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+    //$mail->addAttachment('../uploads/$attachmentImage', 'new.jpg');    // Optional name
 
     //$bodyofemail = 'This is the HTML message body <b>in bold!</b>';
 

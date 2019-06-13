@@ -347,7 +347,12 @@ function metricPost(shoulder, arm, torso, waist){
   //$.post('../php/insertMetrics.php',{postmyShoulder:myShoulder, postmyArm:myArm, postmyTorso:myTorso, postmyWaist:myWaist});
   confirm("press OK if the measurements obtained look accurate?");
 
-  window.location.href = "../php/insertMetrics.php?m1=" + shoulder + "&m2=" + arm + "&m3=" + torso + "&m4=" + waist;
+  setTimeout(function()
+    {  
+      window.location.href = "../php/insertMetrics.php?m1=" + shoulder + "&m2=" + arm + "&m3=" + torso + "&m4=" + waist;
+    }, 5000);  
 }
+
+
 
 
