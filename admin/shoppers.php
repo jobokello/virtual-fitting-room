@@ -2,7 +2,7 @@
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "ivyproject";
+  $dbname = "virtualdressroom";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -68,7 +68,7 @@
             <li><a href="refunds.php">Refunds</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, Yvonne</a></li>
+            <li><a href="index.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, Jobson</a></li>
             <li><a href="pages.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->

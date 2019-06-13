@@ -13,7 +13,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "virtualdressroom";
-$ID = $_SESSION['payID'];
+echo $ID = $_GET['id'];
 
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -71,9 +71,17 @@ else
             echo $shopPhone = $rowShop['shopperPhonenumber'];
         }
 
-        $mailtodesigner = "<br>Dear $desFname $desSname, this is to notify you of your new cloth order from $shopFname $shopSname for the cloth under your collection called $cName for the price $cPrice. Kinldly complete this order. You may also contact $shopFname using the phone number $shopPhone for any customizations on the cloth.<br>Regards<br>
-        Jobson Designs.";
-        $mailtoshopper ="<br>Dear $shopFname,<br>This is to confirm that your cloth order has been received and is being processes by $desFname $desSname. The payment of ksh.$cPrice has also been Successfully received and will there only be forwarded to the paid out to the rightful individual upon the Successfull completion of your order.<br><br>Regards<br>Jobson Designs.";  
+        // sql to delete a record
+        $sql4 = "DELETE FROM orders WHERE orderID = '$ID'";
+
+        if ($conn->query($sql4) === TRUE) {
+            echo "Record deleted successfully";
+        } else {
+            echo "Error deleting record: " . $conn->error;
+        }
+
+        $mailtodesigner = "<br>Dear $desFname $desSname, this is to acknowledge the cancellation of the cloth order from $shopFname $shopSname for the cloth under your collection called $cName for the price $cPrice. Kinldly complete this order. We will also update $shopFname $shopSname on the same.<br>Regards<br>Jobson Designs.";
+        $mailtoshopper ="<br>Dear $shopFname,<br>This is to notify you of the order cancellation of your order number:$ID that was being processes by $desFname $desSname. Due to unavoidable circumstances the Mr/mrs $desFname $desSname was not able to attend to your order kindly log into your accont and reorder your clothing. We will do our best to provide with a new designer. We apologize for any inconviniences caused.<br><br>Regards<br>Jobson Designs.";  
          
     }
     else 
@@ -111,7 +119,7 @@ try
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = 'New Clothing Order';
+    $mail->Subject = 'Order Cancellation Acknowledgement';
     $mail->Body    = $mailtodesigner;
     $mail->AltBody = strip_tags($mailtodesigner);
 
@@ -119,7 +127,7 @@ try
     {
        echo 'Message has been sent';
        //header("location: ../html/shoppingCart.php");
-       //echo '<script type="text/javascript">window.location = "../html/shoppingCart.php"</script>';
+       echo '<script type="text/javascript">window.location = "../html/designerOrders.php"</script>';
 
         //new email to shopper
         $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
@@ -151,14 +159,14 @@ try
 
             //Content
             $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Cloth Order Successfully Received';
+            $mail->Subject = 'Order Cancellation Notification';
             $mail->Body    = $mailtoshopper;
             $mail->AltBody = strip_tags($mailtoshopper);
 
             if($mail->send()){
                echo 'Message has been sent';
                //header("location: ../html/shoppingCart.php");
-               echo '<script type="text/javascript">window.location = "../html/shoppingCart.php"</script>'; 
+               //echo '<script type="text/javascript">window.location = "../html/shoppingCart.php"</script>'; 
             }
         } 
         catch (Exception $e) 

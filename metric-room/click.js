@@ -320,8 +320,8 @@ function finalInches(shoulderLenghth,armLenghth,shoulderToWaist,waistCircumferen
 
   var waist = Math.round(finalWaistCircumference);
 
-  confirm("press OK if the measurements obtained look accurate?");
   
+
   metricPost(shoulder, arm, torso, waist);
 
   
@@ -345,6 +345,7 @@ function metricPost(shoulder, arm, torso, waist){
  //var world = "welcome to my world";
 
   //$.post('../php/insertMetrics.php',{postmyShoulder:myShoulder, postmyArm:myArm, postmyTorso:myTorso, postmyWaist:myWaist});
+  confirm("press OK if the measurements obtained look accurate?");
 
   window.location.href = "../php/insertMetrics.php?m1=" + shoulder + "&m2=" + arm + "&m3=" + torso + "&m4=" + waist;
 }

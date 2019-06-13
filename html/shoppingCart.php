@@ -112,6 +112,8 @@
 
       <br>
       <br>
+      <br>
+      <br>
 
       <legend style="text-align: center;">Pending Orders List</legend>
       <table class=" table table-hover table-bordered table-striped">
@@ -158,7 +160,7 @@
           echo "<td>".$row['trpAgentStatus']."</td>";
           echo "<td>".$row['shopperStatus']."</td>";        
           echo "<td><button style='margin:5px' type='button' class='btn btn-primary btn-block center-block'><a style='text-decoration: none; color: white;' href=\"../camera and fit/index.php?id=$row[orderID]\">Pay for Order</a></button><button style='margin:5px' type='button' class='btn btn-success center-block'><a style='text-decoration: none; color: white;' href=\"../php/shopperConfirmation.php?id=$row[orderID]\">Order is Delivered</a></button> 
-          <button style='margin:5px' type='button' class='btn btn-danger btn-block center-blocks'><a style='text-decoration: none; color: white;' href=\"../php/shopperCancellation.php?id=$row[orderID]\" onClick=\"return confirm('Are you sure you want to cancel the and get a refund?')\">Cancel Order</a></button></td>";
+          <button style='margin:5px' type='button' class='btn btn-danger btn-block center-blocks'><a style='text-decoration: none; color: white;' href=\"../php/shopperCancellation.php?id=$row[orderID]\" onClick=\"return confirm('Are you sure you want to cancel the order?')\">Cancel Order</a></button></td>";
           echo "</tr>";   
         }
       ?>

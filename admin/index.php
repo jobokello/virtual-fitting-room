@@ -2,7 +2,7 @@
 	$servername = "localhost";
   	$username = "root";
   	$password = "";
-  	$dbname = "ivyproject";
+  	$dbname = "virtualdressroom";
 
   	// Create connection
   	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -132,7 +132,7 @@
             <li><a href="refunds.php">Refunds</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, Yvonne</a></li>
+            <li><a href="index.php"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Welcome, Jobson</a></li>
             <li><a href="pages.php"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout</a></li>
           </ul>
         </div><!--/.nav-collapse -->
@@ -218,43 +218,43 @@
 					  <div class="panel-body">
 					  	<div class="col-md-4">
 						    <div class="well dash-box">
-						    	<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 12</h2>
+						    	<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $shoppers; ?></h2>
 						    	<h4>Shoppers</h4>					    	
 						    </div>
 						</div>
 						<div class="col-md-4"> 
 						    <div class="well dash-box">
-						    	<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 12</h2>
+						    	<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $designers; ?></h2>
 						    	<h4>Designers</h4>					    	
 						    </div>
 						</div>
 						<div class="col-md-4">
 						    <div class="well dash-box">
-						    	<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 12</h2>
+						    	<h2><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <?php echo $agents; ?></h2>
 						    	<h4>Transporters</h4>					    	
 						    </div>
 						</div>
 						<div class="col-md-3">
 						    <div class="well dash-box">
-						    	<h2><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 12</h2>
+						    	<h2><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> <?php echo $orders; ?></h2>
 						    	<h4>Orders</h4>					    	
 						    </div>
 						</div>
 						<div class="col-md-3">
 						    <div class="well dash-box">
-						    	<h2><span class="glyphicon glyphicon-send" aria-hidden="true"></span> 12</h2>
+						    	<h2><span class="glyphicon glyphicon-send" aria-hidden="true"></span> <?php echo $dispatch; ?></h2>
 						    	<h4>Dispatches</h4>					    	
 						    </div>
 						</div>
 						<div class="col-md-3">
 						    <div class="well dash-box">
-						    	<h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> 12</h2>
+						    	<h2><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> <?php echo $wages; ?></h2>
 						    	<h4>Wages</h4>					    	
 						    </div>
 						</div>
 						<div class="col-md-3">
 						    <div class="well dash-box">
-						    	<h2><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> 12</h2>
+						    	<h2><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> <?php echo $refunds; ?></h2>
 						    	<h4>Refunds</h4>					    	
 						    </div>
 						</div>

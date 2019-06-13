@@ -20,7 +20,7 @@ require 'vendor/autoload.php';
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "ivyproject";
+$dbname = "virtualdressroom";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -39,7 +39,6 @@ else
 
     if (mysqli_query($conn, $sql1)) 
     {
-        echo "<br>got trpagenr";
         $row1 = mysqli_fetch_array($result1);
 
         echo $cName = $row1['clothName'];
@@ -59,7 +58,7 @@ else
 
     if (mysqli_query($conn, $sql2)) 
     {
-        echo "<br>got trpagenr";
+        echo "<br>got shopper";
         $row2 = mysqli_fetch_array($result2);
 
         echo $sFname = $row2['shopperFname'];
@@ -117,7 +116,7 @@ else
         echo "Error: " . $sql4 . "<br>" . mysqli_error($conn);
     }
 
-    $sql5 = "INSERT INTO dispatch (orderID, clothName, trpfee, shopperID, trpAgentID) VALUES ('$orderID','$cName', '$cFee', '$shopperID', '$agentID')";
+    $sql5 = "INSERT INTO dispatch (orderID, clothName, trpfee, shopperID, trpAgentID, shopperLongitude, shopperLatitude) VALUES ('$orderID','$cName', '$cFee', '$shopperID', '$agentID', $sLongitude, $sLatitude)";
 
     if (mysqli_query($conn, $sql5)) {
         echo "New record created successfully";
@@ -131,7 +130,7 @@ else
 
 
 $messageToShopper = "Dear $sFname $sSname,<br>This is to notify you that your Cloth order number: $orderID has been completed by $dFname $dSname and is awaiting shipping by $tFname $tSname. Upon receipt your Kindly required to log in to your account and confirm that the order was delivered successfully.<br>Kind Regards<br>Ivy Designs.";
-$messageToAgent = "Dear $tFname $tSname,<br>This is to notify you that you have received a new deispatch order number: $orderID for $sFname $sSname. Upon delivery your Kindly required to log in to your account and confirm that the order was delivered successfully<br><br>You can contact him/her on $sPhoneNumber..<br>Kind Regards<br>Ivy Designs.";
+$messageToAgent = "Dear $tFname $tSname,<br>This is to notify you that you have received a new deispatch order number: $orderID for $sFname $sSname. You will navigate to his/her premises using the following link:<br>https://www.google.com/maps/dir/?api=1&destination=$sLatitude,$sLongitude.<br><br>Upon delivery your Kindly required to log in to your account and confirm that the order was delivered successfully<br><br>You can contact him/her on $sPhoneNumber..<br>Kind Regards<br>Ivy Designs.";
 $messageToDesigner = "Dear $dFname $dSname,This is to notify you that you order completion has been received and acknowledged. You payment is still pending but will be paid promptly upon the delivery of the cloth to the shopper. Kindly bear with us<br>Kind Regards<br>Ivy Designs." ;
 
 $mail = new PHPMailer(true);                              // Passing `true` enables exceptions

@@ -9,7 +9,7 @@
   	$servername = "localhost";
   	$username = "root";
   	$password = "";
-  	$dbname = "ivyproject";
+  	$dbname = "virtualdressroom";
 
   	// Create connection
   	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -82,7 +82,7 @@
 			}
 
 		   	//select transporter with low job count
-		   	$sql4 = "UPDATE orders SET designerStatus = 'Confirmed' WHERE orderID='$orderID'";
+		   	$sql4 = "UPDATE orders SET designerStatus = 'Confirmed', trpAgentID = '$agentID' WHERE orderID='$orderID'";
 
 		   	$result4 = mysqli_query($conn,$sql4);
 

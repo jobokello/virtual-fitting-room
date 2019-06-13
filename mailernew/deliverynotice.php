@@ -31,7 +31,7 @@ echo '<br>';
 
 $jobson = 'jobokello5@gmail.com';
 $jack = 'jacknovak254@gmail.com';
-$ivy = 'sylviayvonne65@gmail.com';
+$novak = 'jacknovak009@gmail.com';
 
 $shopperMessage = "Dear $shopFname $shopSname,<br>This is to notify you of the delivery of your order number $finalOrderID by $agentFname $agentSname today. Kindly log in to your account and confirm delivery.<br>Kind Regards<br>Ivy Designs.<br>";
 $agentMessage = "Dear $agentFname $agentSname,<br> This is to notify you that we have acknowledged your order delivery nad we will begin procesing your payment of ksh. $finalAgentWage as soon as possible to the phone number $agentPhonenumber.<br>Kind Regards<br>Ivy Designs<br>.";
@@ -65,7 +65,7 @@ try
 
     //Recipients
     $mail->setFrom('ivydesigns20@gmail.com', 'Ivy Designs');
-    $mail->addAddress($shopEmail);     // Add a recipient
+    $mail->addAddress($jobson);     // Add a recipient
     //$mail->addAddress('ellen@example.com');               // Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
@@ -100,7 +100,7 @@ try
 
             //Recipients
             $mail->setFrom('ivydesigns20@gmail.com', 'Ivy Designs');
-            $mail->addAddress($agentEmail);     // Add a recipient
+            $mail->addAddress($novak);     // Add a recipient
             //$mail->addAddress('ellen@example.com');               // Name is optional
             //$mail->addReplyTo('info@example.com', 'Information');
             //$mail->addCC('cc@example.com');
@@ -136,7 +136,7 @@ try
 
                     //Recipients
                     $mail->setFrom('ivydesigns20@gmail.com', 'Ivy Designs');
-                    $mail->addAddress($desEmail);     // Add a recipient
+                    $mail->addAddress($jack);     // Add a recipient
                     //$mail->addAddress('ellen@example.com');               // Name is optional
                     //$mail->addReplyTo('info@example.com', 'Information');
                     //$mail->addCC('cc@example.com');

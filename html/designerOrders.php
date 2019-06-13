@@ -7,7 +7,7 @@
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "ivyproject";
+  $dbname = "virtualdressroom";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
@@ -169,7 +169,7 @@
           echo "<td>".$row['trpAgentStatus']."</td>";
           echo "<td>".$row['shopperStatus']."</td>";        
           echo "<td><button style='margin:5px' type='button' class='btn btn-success btn-block'><a style='text-decoration: none; color: white;' href=\"../php/designerConfirmation.php?id=$row[orderID]\">Confirm Order Completion</a></button> 
-          <button style='margin:5px' type='button' class='btn btn-danger btn-block center-blocks'><a style='text-decoration: none; color: white;' href=\"../php/designerCancellation.php?id=$row[orderID]\" onClick=\"return confirm('Are you sure you want to cancel the order placed by the client?')\">Cancel Order</a></button></td>";
+          <button style='margin:5px' type='button' class='btn btn-danger btn-block center-blocks'><a style='text-decoration: none; color: white;' href=\"../mailernew/designerCancellation.php?id=$row[orderID]\" onClick=\"return confirm('Are you sure you want to cancel the order placed by the client?')\">Cancel Order</a></button></td>";
           echo "</tr>";   
         }
       ?>
